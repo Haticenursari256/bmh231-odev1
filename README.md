@@ -29,12 +29,16 @@ Sunucu adresi: http://localhost:3000
 
 ## Desteklenen Yollar
 
+
 - `/` — Ana sayfa (HTML)
 - `/hakkimda` — Hakkımda sayfası (HTML)
+- `/iletisim` — İletişim sayfası
+- `/dersler` — Derslerim
+- `/projeler` — Projelerim
 - `/api/ders` — Ders bilgileri (JSON)
 - `/api/agep` — AGEP'e kalan gün hesabı (JSON)
 
-Desteklenmeyen adreslerde 404, GET dışındaki HTTP yöntemlerinde 405 yanıtı döndürülür.
+Desteklenmeyen adreslerde `404 Not Found`, GET dışındaki HTTP yöntemlerinde `405 Method Not Allowed` yanıtı döndürülür.
 
 ## Git Çalışmaları
 Projede Git ile farklı dallar oluşturulmuş, değişiklikler birleştirilmiş ve oluşan çakışma çözülmüştür.
