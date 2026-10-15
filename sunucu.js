@@ -28,6 +28,23 @@ const sunucu = http.createServer((istek, yanit) => {
     <a href="/hakkimda">Hakkımda</a>
 </body>
 </html>`);
+    } else if (yol === "/hakkimda") {
+        yanit.writeHead(200, {
+            "Content-Type": "text/html; charset=utf-8"
+        });
+        yanit.end(`<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Hakkımda</title>
+</head>
+<body>
+    <h1>Hatice Nur Sarı</h1>
+    <p>Yozgat Bozok Üniversitesi Bilgisayar Mühendisliği
+    ikinci sınıf öğrencisiyim. Web programlamayı öğreniyorum.</p>
+    <a href="/">Ana sayfaya dön</a>
+</body>
+</html>`);
     } else {
         yanit.writeHead(404, {
             "Content-Type": "text/plain; charset=utf-8"
