@@ -56,24 +56,6 @@ const sunucu = http.createServer((istek, yanit) => {
             gun: "Cuma"
         }));
 
-    } else if (yol === "/iletisim") {
-        yanit.writeHead(200, {
-            "Content-Type": "text/plain; charset=utf-8"
-        });
-        yanit.end("İletişim sayfası");
-
-    } else if (yol === "/dersler") {
-        yanit.writeHead(200, {
-            "Content-Type": "text/plain; charset=utf-8"
-        });
-        yanit.end("Derslerim");
-
-    } else if (yol === "/projeler") {
-        yanit.writeHead(200, {
-            "Content-Type": "text/plain; charset=utf-8"
-        });
-        yanit.end("Projelerim");
-
     } else if (yol === "/api/agep") {
         const bugun = dayjs().startOf("day");
         const agepTarihi = dayjs("2026-11-01");

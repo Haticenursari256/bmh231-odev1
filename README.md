@@ -32,9 +32,6 @@ Sunucu adresi: http://localhost:3000
 
 - `/` — Ana sayfa (HTML)
 - `/hakkimda` — Hakkımda sayfası (HTML)
-- `/iletisim` — İletişim sayfası
-- `/dersler` — Derslerim
-- `/projeler` — Projelerim
 - `/api/ders` — Ders bilgileri (JSON)
 - `/api/agep` — AGEP'e kalan gün hesabı (JSON)
 
