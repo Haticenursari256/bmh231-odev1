@@ -46,6 +46,27 @@ const sunucu = http.createServer((istek, yanit) => {
     <a href="/">Ana sayfaya dön</a>
 </body>
 </html>`);
+    } else if (yol === "/api/ders") {
+        yanit.writeHead(200, {
+            "Content-Type": "application/json; charset=utf-8"
+        });
+        yanit.end(JSON.stringify({
+            kod: "BMH231",
+            ad: "Web Programlama",
+            gun: "Cuma"
+        }));
+    } else if (yol === "/api/agep") {
+        const bugun = dayjs().startOf("day");
+        const agepTarihi = dayjs("2026-11-01");
+        const kalanGun = agepTarihi.diff(bugun, "day");
+
+        yanit.writeHead(200, {
+            "Content-Type": "application/json; charset=utf-8"
+        });
+        yanit.end(JSON.stringify({
+            sonTeslimTarihi: "2026-11-01",
+            kalanGun: kalanGun
+        }));
     } else if (yol === "/iletisim") {
         yanit.writeHead(200, {
             "Content-Type": "text/plain; charset=utf-8"
@@ -63,15 +84,7 @@ const sunucu = http.createServer((istek, yanit) => {
             "Content-Type": "text/plain; charset=utf-8"
         });
         yanit.end("Projelerim");
-    } else if (yol === "/agep") {
-        const bugun = dayjs();
-        const agepTarihi = dayjs("2026-11-01");
-        const kalanGun = agepTarihi.diff(bugun, "day");
 
-        yanit.writeHead(200, {
-            "Content-Type": "text/plain; charset=utf-8"
-        });
-        yanit.end("AGEP'e kalan gün: " + kalanGun);
 
     } else {
         yanit.writeHead(404, {
