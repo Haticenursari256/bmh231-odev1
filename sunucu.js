@@ -1,4 +1,5 @@
 const http = require("http");
+const dayjs = require("dayjs");
 
 const sunucu = http.createServer((istek, yanit) => {
     const yol = new URL(istek.url, "http://localhost:3000").pathname;
@@ -45,6 +46,33 @@ const sunucu = http.createServer((istek, yanit) => {
     <a href="/">Ana sayfaya dön</a>
 </body>
 </html>`);
+    } else if (yol === "/iletisim") {
+        yanit.writeHead(200, {
+            "Content-Type": "text/plain; charset=utf-8"
+        });
+        yanit.end("İletişim sayfası");
+
+    } else if (yol === "/dersler") {
+        yanit.writeHead(200, {
+            "Content-Type": "text/plain; charset=utf-8"
+        });
+        yanit.end("Derslerim");
+
+    } else if (yol === "/projeler") {
+        yanit.writeHead(200, {
+            "Content-Type": "text/plain; charset=utf-8"
+        });
+        yanit.end("Projelerim");
+    } else if (yol === "/agep") {
+        const bugun = dayjs();
+        const agepTarihi = dayjs("2026-11-01");
+        const kalanGun = agepTarihi.diff(bugun, "day");
+
+        yanit.writeHead(200, {
+            "Content-Type": "text/plain; charset=utf-8"
+        });
+        yanit.end("AGEP'e kalan gün: " + kalanGun);
+
     } else {
         yanit.writeHead(404, {
             "Content-Type": "text/plain; charset=utf-8"
